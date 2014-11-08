@@ -19,3 +19,6 @@ COMMON_PATH := device/sony/msm8974-common
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/media_codecs.xml:system/etc/media_codecs.xml
+
+PRODUCT_PACKAGES += \
+    CameraWorkaround
