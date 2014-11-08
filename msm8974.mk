@@ -14,3 +14,8 @@
 
 # inherit from qcom-common
 $(call inherit-product, device/sony/qcom-common/qcom-common.mk)
+
+COMMON_PATH := device/sony/msm8974-common
+
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/media_codecs.xml:system/etc/media_codecs.xml
