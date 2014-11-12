@@ -16,3 +16,5 @@
 include device/sony/qcom-common/BoardConfigCommon.mk
 
 BOARD_CUSTOM_BOOTIMG_MK := device/sony/msm8974-common/boot/custombootimg.mk
+
+TARGET_USES_LOGD := false
