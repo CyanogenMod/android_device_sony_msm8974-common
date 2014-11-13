@@ -1,0 +1,15 @@
+type qmuxd_socket, file_type;
+type sensors_socket, file_type;
+type tad_socket, file_type;
+type illumination_socket, file_type;
+
+type sensors_data_file, file_type, data_file_type;
+type time_data_file, file_type, data_file_type;
+
+type mpdecision_socket, file_type;
+type mpdecision_data, file_type;
+
+type sysfs_rmnet, fs_type, sysfs_type;
+type sysfs_mpdecision, fs_type, sysfs_type;
+type sysfs_surfaceflinger, fs_type, sysfs_type;
+type sysfs_smdcntl_open_timeout, fs_type, sysfs_type;
