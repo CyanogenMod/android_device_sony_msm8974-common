@@ -1,0 +1,2 @@
+# illumination socket access
+allow system_server illumination_socket:sock_file write;
