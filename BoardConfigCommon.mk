@@ -19,6 +19,9 @@ BOARD_CUSTOM_BOOTIMG_MK := device/sony/msm8974-common/boot/custombootimg.mk
 
 TARGET_USES_LOGD := false
 
+# Bionic
+BOARD_USES_LEGACY_MMAP := true
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
