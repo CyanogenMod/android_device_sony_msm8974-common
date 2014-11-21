@@ -21,6 +21,10 @@ COMMON_PATH := device/sony/msm8974-common
 PRODUCT_PACKAGES += \
     CameraWorkaround
 
+# Ion
+PRODUCT_PACKAGES += \
+    libion
+
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8974
@@ -39,6 +43,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     qcmediaplayer
 
-# Ion
+# Thermal management
 PRODUCT_PACKAGES += \
-    libion
+    thermanager
