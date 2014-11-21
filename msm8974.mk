@@ -38,3 +38,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     qcmediaplayer
+
+# Thermal management
+PRODUCT_PACKAGES += \
+    thermanager
