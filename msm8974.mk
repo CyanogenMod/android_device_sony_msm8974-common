@@ -42,3 +42,7 @@ PRODUCT_BOOT_JARS += \
 # Ion
 PRODUCT_PACKAGES += \
     libion
+
+# Thermal management
+PRODUCT_PACKAGES += \
+    thermanager
