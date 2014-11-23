@@ -25,3 +25,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     CameraWorkaround
+
+# Lights
+PRODUCT_PACKAGES += \
+    lights.msm8974
