@@ -1,0 +1,2 @@
+type_transition mpdecision socket_device:sock_file mpctl_socket;
+allow mpdecision socket_device:dir w_dir_perms;

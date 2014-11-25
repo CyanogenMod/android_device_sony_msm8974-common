@@ -81,6 +81,7 @@ BOARD_SEPOLICY_UNION += \
     domain.te \
     file.te \
     mac-update.te \
+    mpdecision.te \
     radio.te \
     rild.te \
     sct.te \
