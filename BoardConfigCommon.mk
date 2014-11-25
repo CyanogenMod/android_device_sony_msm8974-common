@@ -31,6 +31,7 @@ BOARD_SEPOLICY_UNION += \
     device.te \
     domain.te \
     file.te \
+    healthd.te \
     radio.te \
     rild.te \
     sensors.te \
