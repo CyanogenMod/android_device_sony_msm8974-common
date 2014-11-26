@@ -19,6 +19,9 @@ BOARD_CUSTOM_BOOTIMG_MK := device/sony/msm8974-common/boot/custombootimg.mk
 
 TARGET_USES_LOGD := false
 
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+
 BOARD_SEPOLICY_DIRS += \
 	device/sony/msm8974-common/sepolicy
 
