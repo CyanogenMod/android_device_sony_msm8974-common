@@ -6,7 +6,7 @@
 /dev/socket/mpctl                      u:object_r:mpctl_socket:s0
 
 ## Radio related
-/dev/rmnet_ctrl                    u:object_r:radio_device:s0
+/dev/rmnet_ctrl                        u:object_r:radio_device:s0
 # mux controller
 /dev/rmnet_mux_ctrl                    u:object_r:radio_device:s0
 # qmi protocol driver
@@ -15,13 +15,13 @@
 # Sensors shared Memory Packet Interface
 /dev/smd_sns_dsps                      u:object_r:sensors_device:s0
 
-/dev/rfkill                         u:object_r:rfkill_device:s0
+/dev/rfkill                            u:object_r:rfkill_device:s0
 
-/data/system/default_values   u:object_r:mpctl_data_file:s0
+/data/system/default_values            u:object_r:mpctl_data_file:s0
 
-/data/etc/wlan.*             u:object_r:wifi_data_file:s0
-/data/etc/bluetooth_bdaddr  u:object_r:bluetooth_data_file:s0
+/data/etc/wlan.*                       u:object_r:wifi_data_file:s0
+/data/etc/bluetooth_bdaddr             u:object_r:bluetooth_data_file:s0
 
-/data/misc/quipc(/.*)?        u:object_r:location_data_file:s0
-/data/misc/quipc/gsiff_socket u:object_r:location_socket:s0
-/data/misc/gsiff_ctrl_q       u:object_r:location_data_file:s0
+/data/misc/quipc(/.*)?                 u:object_r:location_data_file:s0
+/data/misc/quipc/gsiff_socket          u:object_r:location_socket:s0
+/data/misc/gsiff_ctrl_q                u:object_r:location_data_file:s0

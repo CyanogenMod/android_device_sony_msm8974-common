@@ -23,19 +23,19 @@ TARGET_USES_LOGD := false
 include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
-	device/sony/msm8974-common/sepolicy
+    device/sony/msm8974-common/sepolicy
 
 # The list below is order dependent
 BOARD_SEPOLICY_UNION += \
-	bluetooth.te \
-	device.te \
-	domain.te \
-	file.te \
-	radio.te \
-	rild.te \
-	sensors.te \
-	tee.te \
-	time_daemon.te \
-	wpa.te \
-	file_contexts \
-	genfs_contexts
+    bluetooth.te \
+    device.te \
+    domain.te \
+    file.te \
+    radio.te \
+    rild.te \
+    sensors.te \
+    tee.te \
+    time_daemon.te \
+    wpa.te \
+    file_contexts \
+    genfs_contexts
