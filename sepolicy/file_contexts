@@ -11,8 +11,6 @@
 /dev/rmnet_mux_ctrl                    u:object_r:radio_device:s0
 # qmi protocol driver
 /dev/qmi[0-2]                          u:object_r:radio_device:s0
-# shared memory drivers
-/dev/smdcntl([0-9])+                      u:object_r:radio_device:s0
 
 # Sensors shared Memory Packet Interface
 /dev/smd_sns_dsps                      u:object_r:sensors_device:s0
