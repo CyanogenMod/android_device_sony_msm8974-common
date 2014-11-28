@@ -38,3 +38,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     qcmediaplayer
+
+# Ion
+PRODUCT_PACKAGES += \
+    libion
