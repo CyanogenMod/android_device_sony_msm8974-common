@@ -163,7 +163,7 @@
     <!--  Whether Multiuser UI should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
 
-    <!-- SD card is hot-pluggable on this device
-    <bool name="config_batterySdCardAccessibility">true</bool> -->
+    <!-- SD card is hot-pluggable on this device -->
+    <bool name="config_batterySdCardAccessibility">true</bool>
 
 </resources>
