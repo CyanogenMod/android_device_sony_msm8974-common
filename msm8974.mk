@@ -21,6 +21,10 @@ COMMON_PATH := device/sony/msm8974-common
 PRODUCT_PACKAGES += \
     CameraWorkaround
 
+# Ion
+PRODUCT_PACKAGES += \
+    libion
+
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8974
@@ -38,10 +42,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     qcmediaplayer
-
-# Ion
-PRODUCT_PACKAGES += \
-    libion
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
