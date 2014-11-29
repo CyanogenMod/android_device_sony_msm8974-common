@@ -89,5 +89,8 @@ BOARD_SEPOLICY_UNION += \
     file_contexts \
     genfs_contexts
 
+# Text rendering
+USE_MINIKIN := true
+
 # Time
 BOARD_USES_QC_TIME_SERVICES := true
