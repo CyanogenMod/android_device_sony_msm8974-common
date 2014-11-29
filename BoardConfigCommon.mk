@@ -42,9 +42,15 @@ AUDIO_FEATURE_DISABLED_USBAUDIO := true
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 BOARD_USES_LEGACY_MMAP := true
 
+# Enable Minikin text layout engine (will be the default soon)
+USE_MINIKIN := true
+
 # Graphics
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
+# Include an expanded selection of fonts
+EXTENDED_FONT_FOOTPRINT := true
 
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
