@@ -42,3 +42,10 @@ PRODUCT_BOOT_JARS += \
 # Ion
 PRODUCT_PACKAGES += \
     libion
+
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
+ifneq ($(BOARD_HAVE_RADIO),false)
+    DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay-radio
+    $(call inherit-product, $(COMMON_PATH)/radio.mk)
+endif
