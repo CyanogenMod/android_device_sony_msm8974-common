@@ -1,2 +1,2 @@
-# Allow access to /dev/socket/tad
-unix_socket_connect(sensors, tad, init)
+# Connect to /dev/socket/tad
+unix_socket_connect(sensors, tad, tad)
