@@ -41,6 +41,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     CameraWorkaround
 
+PRODUCT_PACKAGES += \
+    libcutilz
+
 # Display
 PRODUCT_PACKAGES += \
     hwcomposer.msm8974 \
