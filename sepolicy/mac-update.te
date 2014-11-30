@@ -1,0 +1,7 @@
+type mac-update, domain;
+type mac-update_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(mac-update)
+
+allow mac-update wifi_data_file:file rw_file_perms;

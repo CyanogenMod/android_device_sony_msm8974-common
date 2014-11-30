@@ -1,0 +1,11 @@
+type ta_qmi, domain;
+type ta_qmi_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(ta_qmi)
+
+allow ta_qmi self:capability dac_override;
+allow ta_qmi self:socket create_socket_perms;
+unix_socket_connect(ta_qmi, tad, tad)
+wakelock_use(ta_qmi)
+allow ta_qmi smem_log_device:chr_file rw_file_perms;

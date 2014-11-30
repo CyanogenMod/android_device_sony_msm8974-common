@@ -80,9 +80,14 @@ BOARD_SEPOLICY_UNION += \
     device.te \
     domain.te \
     file.te \
+    mac-update.te \
     radio.te \
     rild.te \
+    sct.te \
     sensors.te \
+    suntrold.te \
+    tad.te \
+    ta_qmi.te \
     tee.te \
     time_daemon.te \
     wpa.te \
