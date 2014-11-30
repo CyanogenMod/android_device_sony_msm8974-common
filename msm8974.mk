@@ -21,6 +21,10 @@ COMMON_PATH := device/sony/msm8974-common
 PRODUCT_PACKAGES += \
     CameraWorkaround
 
+# Cutilz - HACK
+PRODUCT_PACKAGES += \
+    libcutilz
+
 # Ion
 PRODUCT_PACKAGES += \
     libion
