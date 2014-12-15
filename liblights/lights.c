@@ -219,9 +219,6 @@ static void write_led_scaled(enum led_ident id, int brightness,
 	float brightness_c = ((float)brightness)/255.;
 	float scaled = max_brightness * brightness_c;
 
-	if (brightness > 0 && scaled < LED_BRIGHTNESS_MIN && id == LED_BACKLIGHT)
-		scaled = LED_BRIGHTNESS_MIN;
-
 	if (pwm && led_descs[id].pwm)
 		write_string(led_descs[id].pwm, pwm);
 
