@@ -37,6 +37,12 @@
 /* Include device-specific definitions */
 #include "sony_lights.h"
 
+/* Ignore the minimum value for now,
+ * as the kernel now reports the max brightness as 255,
+ * while we set the minimum as 188 for the old value of 4095
+ */
+#define LED_BRIGHTNESS_MIN 0
+
 static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
 
 enum {
