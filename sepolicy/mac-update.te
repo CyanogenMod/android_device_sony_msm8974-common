@@ -5,5 +5,6 @@ type mac-update_exec, exec_type, file_type;
 init_daemon_domain(mac-update)
 
 # For reading and writing the correct MAC address
+type_transition mac-update system_data_file:file wifi_data_file;
 allow mac-update wifi_data_file:dir search;
 allow mac-update wifi_data_file:file rw_file_perms;
