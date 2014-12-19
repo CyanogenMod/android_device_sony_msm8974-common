@@ -17,9 +17,36 @@ $(call inherit-product, device/sony/qcom-common/qcom-common.mk)
 
 COMMON_PATH := device/sony/msm8974-common
 
+# Audio
+PRODUCT_PACKAGES += \
+    audiod \
+    audio.a2dp.default \
+    audio.primary.msm8974 \
+    audio.r_submix.default \
+    audio.usb.default \
+    audio_policy.msm8974
+
+PRODUCT_PACKAGES += \
+    libaudio-resampler \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    tinymix
+
+# Audio configuration
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf
+
 # Camera
 PRODUCT_PACKAGES += \
     CameraWorkaround
+
+# Display
+PRODUCT_PACKAGES += \
+    hwcomposer.msm8974 \
+    gralloc.msm8974 \
+    copybit.msm8974 \
+    memtrack.msm8974
 
 # Ion
 PRODUCT_PACKAGES += \
