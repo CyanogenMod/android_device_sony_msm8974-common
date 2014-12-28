@@ -68,6 +68,9 @@ BOARD_CUSTOM_BOOTIMG_MK := device/sony/msm8974-common/boot/custombootimg.mk
 # Logd
 TARGET_USES_LOGD := false
 
+# RIL
+TARGET_RIL_VARIANT := ril-caf
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
