@@ -1,0 +1,10 @@
+allow mediaserver camera_prop:property_service set;
+
+allow mediaserver camera_socket:dir { search };
+allow mediaserver camera_socket:file { read write getattr open };
+
+allow mediaserver mm-qcamerad:unix_stream_socket connectto;
+allow mediaserver system_server:unix_stream_socket { read write };
+
+# /data/local/tmp for Chokoball
+allow mediaserver shell_data_file:dir search;
