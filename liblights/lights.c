@@ -28,6 +28,7 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <math.h>
 
 #include <sys/ioctl.h>
 #include <sys/types.h>
@@ -210,8 +211,28 @@ static int read_int(const char *path)
 	return strtol(buffer, 0, 0);
 }
 
+static const int pwm_patterns[16][16] = {
+        {0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0},
+        {0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0},
+        {0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0},
+        {0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0},
+        {0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0},
+        {0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0},
+        {0,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0},
+        {0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0},
+        {0,0,0,1,1,1,1,1,1,1,1,1,1,1,0,0},
+        {0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0},
+        {0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
+        {0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0},
+        {0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+        {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+};
+
+
 static void write_led_scaled(enum led_ident id, int brightness,
-		const char *pwm, unsigned int duration)
+		int pwm, unsigned int duration)
 {
 	float max_brightness = read_int(led_descs[id].max_brightness);
 	if (max_brightness <= 0)
@@ -219,15 +240,33 @@ static void write_led_scaled(enum led_ident id, int brightness,
 	float brightness_c = ((float)brightness)/255.;
 	float scaled = max_brightness * brightness_c;
 
-	if (pwm && led_descs[id].pwm)
-		write_string(led_descs[id].pwm, pwm);
+	if (pwm > -1 && led_descs[id].pwm){
+                int pwm_scale[16];
+                char pwm_string [256];
+
+		int i;
+		for (i = 0; i < 16; i++){
+		    pwm_scale[i] = (int)floor(pwm_patterns[pwm][i] * scaled);
+		}
+
+                sprintf (pwm_string, "%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d",pwm_scale[0],pwm_scale[1],
+											pwm_scale[2],pwm_scale[3],
+											pwm_scale[4],pwm_scale[5],
+											pwm_scale[6],pwm_scale[7],
+											pwm_scale[8],pwm_scale[9],
+											pwm_scale[10],pwm_scale[11],
+											pwm_scale[12],pwm_scale[13],
+											pwm_scale[14],pwm_scale[15]);
+
+		write_string(led_descs[id].pwm, pwm_string);
+	} else {
+		write_int(led_descs[id].brightness, ((int)scaled));
+	}
 
 	if(duration!=0) {
 		if (led_descs[id].step)
 			write_int(led_descs[id].step, duration);
 	}
-
-	write_int(led_descs[id].brightness, ((int)scaled));
 }
 
 static int is_lit(struct light_state_t const* state)
@@ -245,44 +284,26 @@ static int rgb_to_brightness(struct light_state_t const* state)
 static int set_light_backlight(struct light_device_t *dev, struct light_state_t const *state)
 {
 	pthread_mutex_lock(&g_lock);
-	write_led_scaled(LED_BACKLIGHT, rgb_to_brightness(state), NULL, 0);
+	write_led_scaled(LED_BACKLIGHT, rgb_to_brightness(state), -1, 0);
 	pthread_mutex_unlock(&g_lock);
 
 	return 0;
 }
 
-static const char *pwm_patterns[] = {
-	"0,0,0,0,0,0,0,0,100,0,0,0,0,0,0,0",
-	"0,0,0,0,0,0,0,100,100,0,0,0,0,0,0,0",
-	"0,0,0,0,0,0,0,100,100,100,0,0,0,0,0,0",
-	"0,0,0,0,0,0,100,100,100,100,0,0,0,0,0,0",
-	"0,0,0,0,0,0,100,100,100,100,100,0,0,0,0,0",
-	"0,0,0,0,0,100,100,100,100,100,100,0,0,0,0,0",
-	"0,0,0,0,0,100,100,100,100,100,100,100,0,0,0,0",
-	"0,0,0,0,100,100,100,100,100,100,100,100,0,0,0,0",
-	"0,0,0,0,100,100,100,100,100,100,100,100,100,0,0,0",
-	"0,0,0,100,100,100,100,100,100,100,100,100,100,0,0,0",
-	"0,0,0,100,100,100,100,100,100,100,100,100,100,100,0,0",
-	"0,0,100,100,100,100,100,100,100,100,100,100,100,100,0,0",
-	"0,0,100,100,100,100,100,100,100,100,100,100,100,100,100,0",
-	"0,100,100,100,100,100,100,100,100,100,100,100,100,100,100,0",
-	"0,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100",
-	"100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100",
-};
 
-static const char *calc_pattern(int on, int off, int *duration)
+static int calc_pattern(int on, int off, int *duration)
 {
 	int index;
 
 	index = on * 15 / (on + off);
 	*duration = on / (index + 1);
-	return pwm_patterns[index];
+	return index;
 }
 
 static int set_light_shared(struct light_device_t *dev, struct light_state_t const* state)
 {
 	struct light *light = ll_light(dev);
-	const char *pwm;
+	int pwm_scale;
 	int duration;
 	int i;
 
@@ -300,18 +321,19 @@ static int set_light_shared(struct light_device_t *dev, struct light_state_t con
 				state->flashOnMS, state->flashOffMS,
 				state->color);
 		write_int(led_ctrl.sync_state, 1);
-		pwm = calc_pattern(state->flashOnMS,
+		pwm_scale = calc_pattern(state->flashOnMS,
 				state->flashOffMS, &duration);
+		ALOGD("led scale=%d\n",pwm_scale);
 	} else {
 		ALOGD("led [solid] = %08x\n", state->color);
 		write_int(led_ctrl.sync_state, 0);
 		duration = 0;
-		pwm = NULL;
+		pwm_scale = -1;
 	}
 
-	write_led_scaled(LED_RED, (state->color >> 16) & 0xFF, pwm, duration);
-	write_led_scaled(LED_GREEN, (state->color >> 8) & 0xFF, pwm, duration);
-	write_led_scaled(LED_BLUE, (state->color) & 0xFF, pwm, duration);
+	write_led_scaled(LED_RED, (state->color >> 16) & 0xFF, pwm_scale, duration);
+	write_led_scaled(LED_GREEN, (state->color >> 8) & 0xFF, pwm_scale, duration);
+	write_led_scaled(LED_BLUE, (state->color) & 0xFF, pwm_scale, duration);
 
 	if (state->flashMode != LIGHT_FLASH_NONE) {
 		write_int(led_ctrl.blink_start, 1);
