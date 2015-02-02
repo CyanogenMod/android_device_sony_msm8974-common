@@ -95,6 +95,7 @@ BOARD_SEPOLICY_UNION += \
     suntrold.te \
     system_server.te \
     tad.te \
+    taimport.te \
     ta_qmi.te \
     tee.te \
     thermanager.te \
