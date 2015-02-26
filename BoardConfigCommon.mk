@@ -45,6 +45,9 @@ AUDIO_FEATURE_ENABLED_EXTN_POST_PROC := true
 # Bionic
 BOARD_USES_LEGACY_MMAP := true
 
+# CM Hardware
+BOARD_HARDWARE_CLASS += device/sony/msm8974-common/cmhw
+
 # Font
 EXTENDED_FONT_FOOTPRINT := true
 
