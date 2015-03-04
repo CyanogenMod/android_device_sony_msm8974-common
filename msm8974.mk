@@ -87,3 +87,10 @@ endif
 # Thermal management
 PRODUCT_PACKAGES += \
     thermanager
+
+# OpenGL ES 3.0
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opengles.version=196608
+
+# Include non-opensource parts
+$(call inherit-product, vendor/sony/msm8974-common/msm8974-common-vendor.mk)
