@@ -39,6 +39,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    camera.msm8974 \
     CameraWorkaround
 
 PRODUCT_PACKAGES += \
