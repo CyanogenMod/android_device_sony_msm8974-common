@@ -67,6 +67,9 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
 
 BOARD_CUSTOM_BOOTIMG_MK := device/sony/msm8974-common/boot/custombootimg.mk
 
+# Lights HAL
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Logd
 TARGET_USES_LOGD := false
 
