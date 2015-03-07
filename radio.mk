@@ -2,6 +2,7 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=9 \
     telephony.lteOnCdmaDevice=0 \
+    telephony.lteOnGsmDevice=1 \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.add_power_save=1 \
     persist.radio.oem_socket=true \
