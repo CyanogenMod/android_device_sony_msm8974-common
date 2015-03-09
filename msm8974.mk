@@ -55,6 +55,10 @@ PRODUCT_PACKAGES += \
     copybit.msm8974 \
     memtrack.msm8974
 
+# Ethernet
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml
+
 # Ion
 PRODUCT_PACKAGES += \
     libion
