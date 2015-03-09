@@ -12,9 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from qcom-common
-$(call inherit-product, device/sony/qcom-common/qcom-common.mk)
-
 COMMON_PATH := device/sony/msm8974-common
 
 # Audio
