@@ -111,10 +111,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     com.qc.hardware=true
 
-# QC Perf
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=/vendor/lib/libqc-opt.so
-
 # Recovery
 PRODUCT_PACKAGES += \
     keycheck
