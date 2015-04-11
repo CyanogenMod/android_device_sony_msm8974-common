@@ -26,4 +26,6 @@ vendor/lib/libsc-a2xx.so
 vendor/lib/libsc-a3xx.so
 
 # CPU
+bin/mpdecision
+bin/perfd
 vendor/lib/libqti-perfd-client.so
