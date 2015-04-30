@@ -101,7 +101,6 @@ BOARD_SEPOLICY_UNION += \
     domain.te \
     file.te \
     location.te \
-    mac-update.te \
     mediaserver.te \
     mm-qcamerad.te \
     mpdecision.te \
