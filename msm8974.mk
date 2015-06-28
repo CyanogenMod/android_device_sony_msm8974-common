@@ -107,13 +107,9 @@ endif
 PRODUCT_PACKAGES += \
     power.qcom
 
-# QCOM
-PRODUCT_PROPERTY_OVERRIDES += \
-    com.qc.hardware=true
-
 # QC Perf
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=/vendor/lib/libqc-opt.so
+    ro.vendor.extension_library=libqti-perfd-client.so
 
 # Recovery
 PRODUCT_PACKAGES += \

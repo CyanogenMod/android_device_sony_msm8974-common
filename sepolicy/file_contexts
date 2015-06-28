@@ -32,7 +32,6 @@
 /data/misc/quipc/gsiff_socket          u:object_r:location_socket:s0
 /data/misc/gsiff_ctrl_q                u:object_r:location_data_file:s0
 
-/system/bin/mac-update                 u:object_r:mac-update_exec:s0
 /system/bin/sct_service                u:object_r:sct_exec:s0
 /system/bin/suntrold                   u:object_r:suntrold_exec:s0
 /system/bin/tad_static                 u:object_r:tad_exec:s0

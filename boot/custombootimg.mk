@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
 
 uncompressed_ramdisk := $(PRODUCT_OUT)/ramdisk.cpio
 $(uncompressed_ramdisk): $(INSTALLED_RAMDISK_TARGET)
-	zcat $< > $@
+	gunzip -c $< > $@
 
 INITSH := $(LOCAL_PATH)/init.sh
 BOOTREC_DEVICE := $(TARGET_RECOVERY_ROOT_OUT)/etc/bootrec-device
