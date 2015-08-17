@@ -84,6 +84,9 @@ TARGET_USES_LOGD := false
 TARGET_POWERHAL_VARIANT := qcom
 CM_POWERHAL_EXTENSION := qcom
 
+# Recovery
+TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK := true
+
 # RIL
 BOARD_PROVIDES_LIBRIL := true
 BOARD_RIL_CLASS := ../../../device/sony/msm8974-common/ril/
