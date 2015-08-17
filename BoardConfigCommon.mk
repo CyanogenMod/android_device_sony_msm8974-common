@@ -84,6 +84,9 @@ TARGET_USES_LOGD := false
 TARGET_POWERHAL_VARIANT := qcom
 CM_POWERHAL_EXTENSION := qcom
 
+# Recovery
+BOARD_USES_FULL_RECOVERY_IMAGE := true
+
 # RIL
 BOARD_PROVIDES_LIBRIL := true
 BOARD_RIL_CLASS := ../../../device/sony/msm8974-common/ril/
