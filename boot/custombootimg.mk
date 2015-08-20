@@ -1,5 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
+LZMA_BIN := /usr/bin/lzma
+
 uncompressed_ramdisk := $(PRODUCT_OUT)/ramdisk.cpio
 $(uncompressed_ramdisk): $(INSTALLED_RAMDISK_TARGET)
 	gunzip -c $< > $@
@@ -38,7 +40,17 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(PRODUCT_OUT)/kernel $(uncompressed_ramdisk) $(r
 	@echo -e ${CL_CYN}"Made boot image: $@"${CL_RST}
 
 INSTALLED_RECOVERYIMAGE_TARGET := $(PRODUCT_OUT)/recovery.img
+ifdef BOARD_UNCOMPRESSED_RECOVERY_RAMDISK
 $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(recovery_ramdisk) $(recovery_kernel) $(INSTALLED_DTIMAGE_TARGET)
 	@echo -e ${CL_CYN}"----- Making recovery image ------"${CL_RST}
 	$(hide) $(MKBOOTIMG) --kernel $(PRODUCT_OUT)/kernel --ramdisk $(PRODUCT_OUT)/ramdisk-recovery.img --cmdline "$(BOARD_KERNEL_CMDLINE)" --base $(BOARD_KERNEL_BASE) --pagesize $(BOARD_KERNEL_PAGESIZE) --dt $(INSTALLED_DTIMAGE_TARGET) $(BOARD_MKBOOTIMG_ARGS) -o $(INSTALLED_RECOVERYIMAGE_TARGET)
 	@echo -e ${CL_CYN}"Made recovery image: $@"${CL_RST}
+else
+$(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(recovery_ramdisk) $(recovery_uncompressed_ramdisk) $(recovery_kernel) $(INSTALLED_DTIMAGE_TARGET)
+	@echo -e ${CL_CYN}"----- Making recovery image ------"${CL_RST}
+		$(LZMA_BIN) $(recovery_uncompressed_ramdisk)
+		$(hide) cp $(recovery_uncompressed_ramdisk).lzma $(recovery_ramdisk)
+	$(hide) $(MKBOOTIMG) --kernel $(PRODUCT_OUT)/kernel --ramdisk $(PRODUCT_OUT)/ramdisk-recovery.img --cmdline "$(BOARD_KERNEL_CMDLINE)" --base $(BOARD_KERNEL_BASE) --pagesize $(BOARD_KERNEL_PAGESIZE) --dt $(INSTALLED_DTIMAGE_TARGET) $(BOARD_MKBOOTIMG_ARGS) -o $(INSTALLED_RECOVERYIMAGE_TARGET)
+	@echo -e ${CL_CYN}"Made recovery image: $@"${CL_RST}
+endif
+
