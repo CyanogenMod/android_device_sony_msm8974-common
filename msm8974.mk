@@ -108,6 +108,7 @@ PRODUCT_PACKAGES += \
 
 # QC Perf
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qualcomm.perf.cores_online=2 \
     ro.vendor.extension_library=libqti-perfd-client.so
 
 # Recovery
