@@ -62,6 +62,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libion
 
+# IO Scheduler
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.io.scheduler=bfq
+
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8974
