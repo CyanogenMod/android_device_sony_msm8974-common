@@ -76,9 +76,6 @@ BOARD_CUSTOM_BOOTIMG_MK := device/sony/msm8974-common/boot/custombootimg.mk
 # Lights HAL
 TARGET_PROVIDES_LIBLIGHT := true
 
-# Logd
-TARGET_USES_LOGD := false
-
 # Power HAL
 TARGET_POWERHAL_VARIANT := qcom
 CM_POWERHAL_EXTENSION := qcom
