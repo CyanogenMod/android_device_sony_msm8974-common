@@ -108,6 +108,8 @@ DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 ifneq ($(BOARD_HAVE_RADIO),false)
     DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay-radio
     $(call inherit-product, $(COMMON_PATH)/radio.mk)
+else
+    DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay-wifionly
 endif
 
 # Power
