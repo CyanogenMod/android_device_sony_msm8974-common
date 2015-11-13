@@ -103,6 +103,10 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libstagefrighthw
 
+# OpenSSL compatibility
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 ifneq ($(BOARD_HAVE_RADIO),false)
