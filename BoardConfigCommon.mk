@@ -90,33 +90,5 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += \
     device/sony/msm8974-common/sepolicy
 
-# The list below is order dependent
-BOARD_SEPOLICY_UNION += \
-    bluetooth.te \
-    device.te \
-    domain.te \
-    file.te \
-    location.te \
-    mediaserver.te \
-    mm-qcamerad.te \
-    mpdecision.te \
-    property.te \
-    radio.te \
-    rild.te \
-    sct.te \
-    sensors.te \
-    suntrold.te \
-    system_server.te \
-    tad.te \
-    taimport.te \
-    ta_qmi.te \
-    tee.te \
-    thermanager.te \
-    time_daemon.te \
-    wpa.te \
-    file_contexts \
-    genfs_contexts \
-    property_contexts
-
 # Time
 BOARD_USES_QC_TIME_SERVICES := true
