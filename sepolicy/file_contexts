@@ -17,11 +17,6 @@
 
 /dev/rfkill                            u:object_r:rfkill_device:s0
 
-# Block devices
-/dev/block/platform/msm_sdcc\.1/by-name/modemst1          u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/msm_sdcc\.1/by-name/modemst2          u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/msm_sdcc\.1/by-name/fsg               u:object_r:modem_efs_partition_device:s0
-
 /data/system/default_values            u:object_r:mpctl_data_file:s0
 
 /data/etc                              u:object_r:ta_data_file:s0
