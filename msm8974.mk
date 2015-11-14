@@ -40,7 +40,8 @@ PRODUCT_PACKAGES += \
     CameraWorkaround
 
 PRODUCT_PACKAGES += \
-    libcutilz
+    libcutilz \
+    libsony_cam
 
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
