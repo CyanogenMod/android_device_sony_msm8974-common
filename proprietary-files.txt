@@ -23,3 +23,8 @@ vendor/lib/libsc-a3xx.so
 bin/mpdecision
 bin/perfd
 vendor/lib/libqti-perfd-client.so
+
+# Widevine DRM
+vendor/lib/libwvm.so
+vendor/lib/drm/libdrmwvmplugin.so
+vendor/lib/mediadrm/libwvdrmengine.so
