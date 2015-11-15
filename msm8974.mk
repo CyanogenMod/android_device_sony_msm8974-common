@@ -42,6 +42,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcutilz
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/libgiu.so:/system/lib/libgiu.so \
+    $(LOCAL_PATH)/prebuilt/libiu.so:/system/lib/libiu.so \
+    $(LOCAL_PATH)/prebuilt/libutilz.so:/system/lib/libutilz.so
+
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
