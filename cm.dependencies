@@ -1,5 +1,19 @@
 [
   {
+    "repository": "android_kernel_sony_msm",
+    "target_path": "kernel/sony/msm"
+  },
+  {
+    "repository": "android_hardware_qcom_display",
+    "target_path": "hardware/qcom/display-caf/sony",
+    "branch": "cm-13.0-sony"
+  },
+  {
+    "repository": "android_hardware_qcom_media",
+    "target_path": "hardware/qcom/media-caf/sony",
+    "branch": "cm-13.0-sony"
+  },
+  {
     "repository": "android_device_sony_common",
     "target_path": "device/sony/common"
   },

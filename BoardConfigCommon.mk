@@ -19,10 +19,11 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
 # Kernel properties
-TARGET_KERNEL_SOURCE := kernel/sony/msm8974
+TARGET_KERNEL_SOURCE := kernel/sony/msm
 
 # use CAF variants
 BOARD_USES_QCOM_HARDWARE := true
+SONY_BF64_KERNEL_VARIANT := true
 
 # Platform
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
