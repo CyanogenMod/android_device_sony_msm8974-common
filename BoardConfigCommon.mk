@@ -15,6 +15,9 @@
 # inherit from Sony common
 include device/sony/common/BoardConfigCommon.mk
 
+# Include path
+TARGET_SPECIFIC_HEADER_PATH += device/sony/msm8974-common/include
+
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
