@@ -24,6 +24,24 @@ bin/mpdecision
 bin/perfd
 vendor/lib/libqti-perfd-client.so
 
+# Modem
+bin/netmgrd
+bin/qmuxd
+bin/rmt_storage
+bin/sct_service
+lib/libpin-cache.so
+vendor/lib/libdiag.so
+vendor/lib/libdsi_netctrl.so
+vendor/lib/libdsnetutils.so
+vendor/lib/libdsutils.so
+vendor/lib/libidl.so
+vendor/lib/libnetmgr.so
+vendor/lib/libril-qc-qmi-1.so
+vendor/lib/libmdmdetect.so
+vendor/lib/libperipheral_client.so
+vendor/lib/libconfigdb.so
+vendor/lib/libxml.so
+
 # Widevine DRM
 vendor/lib/libwvm.so
 vendor/lib/drm/libdrmwvmplugin.so

@@ -81,10 +81,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 TARGET_POWERHAL_VARIANT := qcom
 CM_POWERHAL_EXTENSION := qcom
 
-# RIL
-BOARD_PROVIDES_LIBRIL := true
-BOARD_RIL_CLASS := ../../../device/sony/msm8974-common/ril/
-
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
