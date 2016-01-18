@@ -129,10 +129,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     keycheck
 
-# RIL
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.ril_class=SonyRIL
-
 # Thermal management
 PRODUCT_PACKAGES += \
     thermanager
