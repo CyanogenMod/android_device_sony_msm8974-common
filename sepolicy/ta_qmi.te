@@ -5,7 +5,7 @@ type ta_qmi_exec, exec_type, file_type;
 init_daemon_domain(ta_qmi)
 
 # XXX: What exactly is this needed for? - Need to investigate
-allow ta_qmi self:capability dac_override;
+allow ta_qmi self:capability { dac_override net_raw };
 
 allow ta_qmi self:socket create_socket_perms;
 
