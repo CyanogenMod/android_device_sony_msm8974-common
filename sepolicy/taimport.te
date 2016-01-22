@@ -7,6 +7,8 @@ init_daemon_domain(taimport)
 # Connect to /dev/socket/tad
 unix_socket_connect(taimport, tad, tad)
 
+allow taimport self:capability setgid;
+
 # Write to /data/etc/*
 allow taimport ta_data_file:dir rw_dir_perms;
 type_transition taimport ta_data_file:file wifi_data_file;
