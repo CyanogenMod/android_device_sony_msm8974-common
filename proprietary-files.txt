@@ -29,15 +29,16 @@ bin/netmgrd
 bin/qmuxd
 bin/rmt_storage
 bin/sct_service
+vendor/lib/libconfigdb.so
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
 vendor/lib/libidl.so
-vendor/lib/libnetmgr.so
-vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libmdmdetect.so
+vendor/lib/libnetmgr.so
 vendor/lib/libperipheral_client.so
-vendor/lib/libconfigdb.so
+vendor/lib/libril-qc-qmi-1.so
+vendor/lib/librmnetctl.so
 vendor/lib/libxml.so
 
 # QMI
