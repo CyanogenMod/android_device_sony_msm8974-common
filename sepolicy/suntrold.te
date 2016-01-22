@@ -3,3 +3,5 @@ type suntrold_exec, exec_type, file_type;
 
 # Started by init
 init_daemon_domain(suntrold)
+
+allow suntrold socket_device:dir write;
