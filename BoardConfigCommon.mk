@@ -47,9 +47,6 @@ AUDIO_FEATURE_ENABLED_EXTN_POST_PROC := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 
-# Camera
-TARGET_PROVIDES_CAMERA_HAL := true
-
 # CM Hardware
 BOARD_HARDWARE_CLASS += device/sony/msm8974-common/cmhw
 
