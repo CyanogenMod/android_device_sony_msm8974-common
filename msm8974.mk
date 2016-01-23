@@ -45,6 +45,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
+# Boringssl-compat
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+
 # Compatibility with older blobs
 PRODUCT_PACKAGES += \
     libstlport
