@@ -1,10 +1,6 @@
 # Trim Area daemon
 /dev/socket/tad                        u:object_r:tad_socket:s0
 
-# CPU governor controls
-/dev/socket/mpdecision(/.*)?           u:object_r:mpctl_socket:s0
-/dev/socket/mpctl                      u:object_r:mpctl_socket:s0
-
 ## Radio related
 /dev/rmnet_ctrl                        u:object_r:radio_device:s0
 # mux controller
