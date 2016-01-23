@@ -38,7 +38,6 @@ vendor/lib/libmdmdetect.so
 vendor/lib/libnetmgr.so
 vendor/lib/libperipheral_client.so
 vendor/lib/libril-qc-qmi-1.so
-vendor/lib/librmnetctl.so
 vendor/lib/libxml.so
 
 # QMI

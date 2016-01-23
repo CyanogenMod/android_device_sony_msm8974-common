@@ -129,6 +129,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     keycheck
 
+# RIL
+PRODUCT_PACKAGES += \
+    librmnetctl
+
 # Thermal management
 PRODUCT_PACKAGES += \
     thermanager
