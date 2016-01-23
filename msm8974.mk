@@ -51,6 +51,16 @@ PRODUCT_PACKAGES += \
     libtilerenderer \
     libI420colorconvert
 
+# GPS
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/gps.conf:system/etc/gps.conf
+
+PRODUCT_PACKAGES += \
+    libloc_core \
+    libloc_eng \
+    libgps.utils \
+    gps.msm8974
+
 # Ion
 PRODUCT_PACKAGES += \
     libion

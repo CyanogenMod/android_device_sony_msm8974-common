@@ -19,6 +19,10 @@ vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libsc-a3xx.so
 
+# GPS
+lib/libloc_api_v02.so
+lib/libloc_ds_api.so
+
 # Modem
 bin/netmgrd
 bin/qmuxd
