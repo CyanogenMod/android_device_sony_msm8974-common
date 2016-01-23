@@ -34,17 +34,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
-# Camera
-PRODUCT_PACKAGES += \
-    camera.qcom \
-    CameraWorkaround
-
-PRODUCT_PACKAGES += \
-    libcutilz
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    camera2.portability.force_api=1
-
 # Compatibility with older blobs
 PRODUCT_PACKAGES += \
     libstlport
