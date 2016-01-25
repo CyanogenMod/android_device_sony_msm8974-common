@@ -155,5 +155,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
 
+# IO Scheduler
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.io.scheduler=bfq
+
 # Include non-opensource parts
 $(call inherit-product, vendor/sony/msm8974-common/msm8974-common-vendor.mk)
