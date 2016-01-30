@@ -7,7 +7,7 @@ init_daemon_domain(taimport)
 # Connect to /dev/socket/tad
 unix_socket_connect(taimport, tad, tad)
 
-allow taimport self:capability setgid;
+allow taimport self:capability { setgid dac_override };
 
 # Write to /data/etc/*
 allow taimport ta_data_file:dir rw_dir_perms;
