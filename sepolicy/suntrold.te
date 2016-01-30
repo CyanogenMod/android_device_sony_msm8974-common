@@ -4,4 +4,8 @@ type suntrold_exec, exec_type, file_type;
 # Started by init
 init_daemon_domain(suntrold)
 
-allow suntrold socket_device:dir write;
+allow suntrold tad_socket:sock_file write;
+allow suntrold tad:unix_stream_socket connectto;
+allow suntrold tee_device:chr_file { open ioctl read write };
+allow suntrold socket_device:dir { write add_name };
+allow suntrold socket_device:sock_file { create setattr };
