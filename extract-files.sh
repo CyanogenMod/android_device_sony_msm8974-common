@@ -11,3 +11,4 @@ export BOARDCONFIGVENDOR=false
 ../common/extract-files.sh $@
 
 ../common/setup-makefiles.sh
+./setup-makefiles.sh
