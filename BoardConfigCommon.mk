@@ -47,6 +47,13 @@ AUDIO_FEATURE_ENABLED_EXTN_POST_PROC := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 
+# Camera
+TARGET_USES_AOSP := true
+BOARD_QTI_CAMERA_32BIT_ONLY := true
+BOARD_QTI_CAMERA_V2 := true
+USE_DEVICE_SPECIFIC_CAMERA := true
+DEVICE_SPECIFIC_CAMERA_PATH := hardware/sony/camera
+
 # CM Hardware
 BOARD_HARDWARE_CLASS += device/sony/msm8974-common/cmhw
 
