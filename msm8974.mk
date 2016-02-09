@@ -144,6 +144,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     thermanager
 
+# Time
+PRODUCT_PACKAGES += \
+    timekeep \
+    TimeKeep
+
 # USB OTG
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.isUsbOtgEnabled=true
