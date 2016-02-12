@@ -47,6 +47,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=1 \
     persist.camera.ois.disable=0
 
+PRODUCT_PACKAGES += \
+    Snap
+
 # Display
 PRODUCT_PACKAGES += \
     hwcomposer.msm8974 \
