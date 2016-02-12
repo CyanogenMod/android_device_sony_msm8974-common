@@ -47,10 +47,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=1 \
     persist.camera.ois.disable=0
 
-# Compatibility with older blobs
-PRODUCT_PACKAGES += \
-    libstlport
-
 # Display
 PRODUCT_PACKAGES += \
     hwcomposer.msm8974 \
