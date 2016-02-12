@@ -137,6 +137,19 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
+# Sensors
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/sensors_settings:system/etc/sensors_settings
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qti.sensors.dpc=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.debug.sensors.hal=0 \
+    debug.qualcomm.sns.daemon=0 \
+    debug.qualcomm.sns.hal=0 \
+    debug.qualcomm.sns.libsensor1=0
+
 # Thermal management
 PRODUCT_PACKAGES += \
     thermanager
