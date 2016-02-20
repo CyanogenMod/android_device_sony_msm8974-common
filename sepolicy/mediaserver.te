@@ -4,8 +4,6 @@ allow mediaserver camera_socket:file { read write getattr open };
 allow mediaserver mm-qcamerad:unix_stream_socket connectto;
 allow mediaserver system_server:unix_stream_socket { read write };
 
-allow mediaserver ta_data_file:dir search;
-
 # /data/local/tmp for Chokoball
 dontaudit mediaserver shell_data_file:dir search;
 

@@ -1,3 +1,2 @@
 type tad_socket, file_type;
-type ta_data_file, file_type;
 type trim_area_partition_device, dev_type;
