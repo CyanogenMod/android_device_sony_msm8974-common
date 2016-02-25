@@ -48,6 +48,7 @@ vendor/bin/netmgrd
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/bin/qmuxd
+vendor/bin/qseecomd
 vendor/bin/rmt_storage
 vendor/bin/sct_service
 vendor/bin/sensors.qcom
@@ -168,11 +169,14 @@ vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libril-qc-qmi-1.so
+vendor/lib/libril-qc-qmi-2.so
 vendor/lib/libril-qcril-hook-oem.so
+vendor/lib/librpmb.so
 vendor/lib/libseemore.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsmemlog.so
+vendor/lib/libssd.so
 vendor/lib/libsystem_health_mon.so
 vendor/lib/libtime_genoff.so
 vendor/lib/libtrueportrait.so
