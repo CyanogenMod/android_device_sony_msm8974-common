@@ -168,6 +168,7 @@ vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libril-qc-qmi-1.so
+vendor/lib/libril-qc-qmi-2.so
 vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libseemore.so
 vendor/lib/libsensor1.so
