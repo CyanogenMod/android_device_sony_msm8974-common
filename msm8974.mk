@@ -18,10 +18,10 @@ COMMON_PATH := device/sony/msm8974-common
 PRODUCT_PACKAGES += \
     audiod \
     audio.a2dp.default \
+    audio_policy.msm8974 \
     audio.primary.msm8974 \
     audio.r_submix.default \
     audio.usb.default \
-    audio_policy.msm8974
 
 PRODUCT_PACKAGES += \
     libaudio-resampler \
@@ -90,8 +90,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    $(COMMON_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
-    $(COMMON_PATH)/media_profiles.xml:system/etc/media_profiles.xml
+    $(COMMON_PATH)/media/media_codecs.xml:system/etc/media_codecs.xml \
+    $(COMMON_PATH)/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(COMMON_PATH)/media/media_profiles.xml:system/etc/media_profiles.xml
 
 # Media
 PRODUCT_PACKAGES += \
