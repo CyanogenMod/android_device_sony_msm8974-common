@@ -12,8 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from Sony common
-include device/sony/common/BoardConfigCommon.mk
+BOARD_VENDOR := sony
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH += device/sony/msm8974-common/include
