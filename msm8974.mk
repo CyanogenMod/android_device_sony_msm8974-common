@@ -63,6 +63,12 @@ PRODUCT_PACKAGES += \
     libtilerenderer \
     libI420colorconvert
 
+# FM Radio
+PRODUCT_PACKAGES += \
+    FM2 \
+    libqcomfm_jni \
+    qcom.fmradio
+
 # GPS
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/gps.conf:system/etc/gps.conf
