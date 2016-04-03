@@ -34,8 +34,11 @@
 
 #include <hardware/lights.h>
 
-/* Include device-specific definitions */
-#include "sony_lights.h"
+#define LED_BACKLIGHT_PATH "/sys/class/leds/lcd-backlight/"
+
+#define LED_RED_PATH "/sys/class/leds/led:rgb_red/"
+#define LED_GREEN_PATH "/sys/class/leds/led:rgb_green/"
+#define LED_BLUE_PATH "/sys/class/leds/led:rgb_blue/"
 
 static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
 
