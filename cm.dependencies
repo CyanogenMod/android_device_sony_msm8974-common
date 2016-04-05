@@ -5,13 +5,11 @@
   },
   {
     "repository": "android_hardware_qcom_display",
-    "target_path": "hardware/qcom/display-caf/sony",
-    "branch": "cm-13.0-sony"
+    "target_path": "hardware/qcom/display"
   },
   {
     "repository": "android_hardware_qcom_media",
-    "target_path": "hardware/qcom/media-caf/sony",
-    "branch": "cm-13.0-sony"
+    "target_path": "hardware/qcom/media"
   },
   {
     "repository": "android_hardware_sony_camera",
