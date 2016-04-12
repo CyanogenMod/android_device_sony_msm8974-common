@@ -20,8 +20,11 @@
 #include "init_board_common.h"
 #include "init_prototypes.h"
 
-// Constants: device LEDs
-#include "sony_lights.h"
+#define LED_BACKLIGHT_PATH "/sys/class/leds/lcd-backlight/"
+
+#define LED_RED_PATH "/sys/class/leds/led:rgb_red/"
+#define LED_GREEN_PATH "/sys/class/leds/led:rgb_green/"
+#define LED_BLUE_PATH "/sys/class/leds/led:rgb_blue/"
 
 // Constants: devices controls
 #define DEV_BLOCK_FOTA_NUM 16
